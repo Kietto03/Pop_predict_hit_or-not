@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Results</title>
+</head>
+<body>
+    <h1>Predictions for: {{ filename }}</h1>
+    <ul>
+        {% for model, prediction in predictions.items() %}
+        <li><strong>{{ model }}:</strong> {{ prediction }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back</a>
+</body>
+</html>
