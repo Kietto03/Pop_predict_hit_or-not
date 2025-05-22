@@ -1,0 +1,79 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background-color: #f9f9f9; */
+    background-image: url(https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/495274014_731006032608036_8157787213907050841_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=fhQPdYGRKeIQ7kNvwF4Dcwe&_nc_oc=Adlcr85QndtSCuKTeqDKtEAQu3mtsxTcEfDkuOhyPo0qrfy6BGm9NL1R7KNE7aHSl08mgo_CXhnvr0XdYZdJa1h9&_nc_zt=23&_nc_ht=scontent.fhan2-5.fna&_nc_gid=GIdJNggCr9KHkKSFnyrq8w&oh=00_AfJw12f8v8zYolonV_s9A72g8jCJaKkXlAXOsew7AdYf3Q&oe=6832751A);
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+input[type="file"] {
+    margin-top: 20px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    display: none;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+#waveform {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 15px;
+}

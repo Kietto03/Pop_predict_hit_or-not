@@ -1,13 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Music Genre Classifier</title>
+    <meta charset="UTF-8">
+    <title>Music Genre Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://unpkg.com/wavesurfer.js"></script>
 </head>
+
 <body>
-    <h1>Upload a WAV file</h1>
-    <form method="POST" action="/predict" enctype="multipart/form-data">
-        <input type="file" name="file" accept=".wav" required>
-        <button type="submit">Predict</button>
-    </form>
+    <div class="container">
+        <h2>Upload Your WAV File</h2>
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".wav" id="audioInput" required><br>
+            <div id="waveform" style="margin-top: 20px;"></div>
+            <button type="button" id="playBtn" style="display:none;">▶ Play / Pause</button><br>
+            <button type="submit">Predict</button>
+        </form>
+        <div class="loader" id="loader"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
+
 </html>

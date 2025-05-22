@@ -1,15 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Prediction Results</title>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-    <h1>Predictions for: {{ filename }}</h1>
-    <ul>
-        {% for model, prediction in predictions.items() %}
-        <li><strong>{{ model }}:</strong> {{ prediction }}</li>
-        {% endfor %}
-    </ul>
-    <a href="/">Back</a>
+    <div class="container">
+        <h2>Model Predictions</h2>
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Prediction</th>
+            </tr>
+            {% for model, prediction in predictions.items() %}
+            <tr>
+                <td>{{ model }}</td>
+                <td>{{ prediction }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <a href="/" style="text-decoration:none;"><button>Try Another File</button></a>
+    </div>
 </body>
+
 </html>
