@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const audioInput = document.getElementById("audioInput");
   const playBtn = document.getElementById("playBtn");
 
-  // Initialize wavesurfer
   let wavesurfer = WaveSurfer.create({
     container: "#waveform",
     waveColor: "#ccc",
@@ -12,27 +11,25 @@ document.addEventListener("DOMContentLoaded", function () {
     height: 80,
   });
 
-  // Handle file preview
+  playBtn.disabled = true; // disable until ready
+
   audioInput.addEventListener("change", function (e) {
     const file = e.target.files[0];
     if (file) {
-      const reader = new FileReader();
-
-      reader.onload = function (evt) {
-        wavesurfer.load(evt.target.result);
-        playBtn.style.display = "inline-block";
-      };
-
-      reader.readAsDataURL(file);
+      wavesurfer.loadBlob(file);
+      playBtn.style.display = "inline-block";
+      playBtn.disabled = true;  // disable while loading
     }
   });
 
-  // Play/pause button
+  wavesurfer.on('ready', () => {
+    playBtn.disabled = false;
+  });
+
   playBtn.addEventListener("click", function () {
     wavesurfer.playPause();
   });
 
-  // Show loader on form submit
   form.addEventListener("submit", function () {
     loader.style.display = "block";
   });
